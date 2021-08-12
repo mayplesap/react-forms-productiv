@@ -7,7 +7,7 @@ import React, { useState } from "react";
  * - handleSave: function to call in parent.
  * 
  * State:
- * - formData: { title, description, priority }
+ * - formData: { title, description, priority, id }
  *
  * { TodoApp, EditableTodo } -> TodoForm
  */
@@ -27,7 +27,8 @@ function TodoForm({ initialFormData, handleSave }) {
   /** Call parent function and clear form. */
   function handleSubmit(evt) {
     evt.preventDefault();
-    handleSave();
+    handleSave(formData);
+    setFormData(initialFormData);
   }
 
   return (
@@ -85,7 +86,8 @@ TodoForm.defaultProps = {
   initialFormData: {
     title: "",
     description: "",
-    priority: "",
+    priority: 1,
+    id: "",
   },
 };
 
