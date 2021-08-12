@@ -2,11 +2,12 @@ import React, { useState } from "react";
 
 /** Form for adding.
  *
- * State:
- *
  * Props:
- * - initialFormData
+ * - initialFormData: object
  * - handleSave: function to call in parent.
+ * 
+ * State:
+ * - formData: { title, description, priority }
  *
  * { TodoApp, EditableTodo } -> TodoForm
  */

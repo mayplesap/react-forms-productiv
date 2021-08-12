@@ -17,6 +17,8 @@ import EditableTodoList from "./EditableTodoList";
  */
 
 function TodoApp() {
+  const [todos, setTodos] = useState([]);
+
   /** add a new todo to list */
   function create(newTodo) {}
 
@@ -27,6 +29,12 @@ function TodoApp() {
   function remove(id) {}
 
   /**TODO: handleSave: for the form */
+  function handleSave(newTodo){
+    setTodos(todos => ([
+      ...todos,
+      newTodo
+    ]))
+  }
 
   return (
     <main className="TodoApp">
