@@ -11,12 +11,18 @@ import EditableTodo from "./EditableTodo";
  * TodoApp -> EditableTodoList -> [ EditableTodo, ... ]
  */
 
-function EditableTodoList({todos, update, remove}) {
-  console.log("TODOSSS", todos);
+function EditableTodoList({ todos, update, remove }) {
   return (
-      <div>
-        {todos.map(todo => <EditableTodo todo={todo} update={update} remove={remove}/>)}
-      </div>
+    <div>
+      {todos.map((todo) => (
+        <EditableTodo
+          todo={todo}
+          update={update}
+          key={todo.id}
+          remove={remove}
+        />
+      ))}
+    </div>
   );
 }
 
